@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Ola" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1102.4,3132" sap2010:WorkflowViewState.IdRef="Ola_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Ola" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1102.4,3599.2" sap2010:WorkflowViewState.IdRef="Ola_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="38">
       <x:String>System.Activities</x:String>
@@ -77,21 +77,23 @@
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Ola" sap:VirtualizedContainerService.HintSize="625.6,3067.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Ola" sap:VirtualizedContainerService.HintSize="625.6,3534.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="584,2974.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="C:\Users\jeswi\Downloads\Route Tracker-Output.xlsx">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="584,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Ola Extraction started&quot;]" />
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="584,3308.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="DependencyFiles\Output\Route Tracker-Output.xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="550.4,2864.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="550.4,3199.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="inputdto" />
             </Sequence.Variables>
@@ -107,25 +109,26 @@
                 </InArgument>
               </ui:ExcelReadRange.Range>
             </ui:ExcelReadRange>
-            <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Edge: Book Cabs Nearby at Best Price | Hire Taxi Nearby Online at Olacabs.com" sap:VirtualizedContainerService.HintSize="508.8,2672" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="9ca5242e-6f9a-4a12-827d-74c57aa91765" Version="V2">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="508.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Ola data read from excel&quot;]" />
+            <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Edge: Book Cabs Nearby at Best Price | Hire Taxi Nearby Online at Olacabs.com" sap:VirtualizedContainerService.HintSize="508.8,2873.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="9ca5242e-6f9a-4a12-827d-74c57aa91765" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="475.2,2455.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="475.2,2656.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[inputdto]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="433.6,2232.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[inputdto]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="433.6,2301.6" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                       <ui:ForEachRow.Body>
                         <ActivityAction x:TypeArguments="sd:DataRow">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="375.2,2115.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="375.2,2184" sap2010:WorkflowViewState.IdRef="Sequence_4">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:String" Name="Mini" />
                               <Variable x:TypeArguments="x:String" Name="PrimeSedan" />
@@ -158,7 +161,7 @@
                                 </ui:Target>
                               </ui:Click.Target>
                             </ui:Click>
-                            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DelayMS="2000" DisplayName="Type Into 'INPUT  addressInput'" sap:VirtualizedContainerService.HintSize="333.6,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[row.Item(&quot;From&quot;).ToString]">
+                            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DelayMS="3000" DisplayName="Type Into 'INPUT  addressInput'" sap:VirtualizedContainerService.HintSize="333.6,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[row.Item(&quot;From&quot;).ToString]">
                               <ui:TypeInto.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5f973a47-cbf5-4148-8a4c-b083e558de64" InformativeScreenshot="a197798cf9e22fc98639e313b8fe3cf9" Selector="&lt;webctrl tag='OLA-APP' /&gt;&lt;webctrl shadowhostid='' tag='OLA-MODAL' /&gt;&lt;webctrl shadowhostid='ola-location' tag='OLA-LOCATION' /&gt;&lt;webctrl shadowhostid='' tag='INPUT' /&gt;">
                                   <ui:Target.TimeoutMS>
@@ -170,7 +173,7 @@
                                 </ui:Target>
                               </ui:TypeInto.Target>
                             </ui:TypeInto>
-                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="1500" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
                               <ui:Click.CursorPosition>
                                 <ui:CursorPosition Position="Center">
                                   <ui:CursorPosition.OffsetX>
@@ -192,40 +195,11 @@
                                 </ui:Target>
                               </ui:Click.Target>
                             </ui:Click>
-                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
-                              <ui:Click.CursorPosition>
-                                <ui:CursorPosition Position="Center">
-                                  <ui:CursorPosition.OffsetX>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:CursorPosition.OffsetX>
-                                  <ui:CursorPosition.OffsetY>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:CursorPosition.OffsetY>
-                                </ui:CursorPosition>
-                              </ui:Click.CursorPosition>
-                              <ui:Click.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="42d69ee6-f8dd-49f3-91e2-3ad4dce256e5" InformativeScreenshot="af0a47eaaf62175862ac0557aed479aa" Selector="&lt;webctrl tag='OLA-APP' /&gt;&lt;webctrl shadowhostid='' tag='OLA-HOME' /&gt;&lt;webctrl shadowhostid='' tag='OLA-HOME-LOCAL' /&gt;&lt;webctrl shadowhostid='' tag='OLA-LOCATION-INPUT' /&gt;&lt;webctrl idx='3' isleaf='1' shadowhostid='' tag='DIV' /&gt;">
-                                  <ui:Target.TimeoutMS>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:Target.TimeoutMS>
-                                  <ui:Target.WaitForReady>
-                                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                                  </ui:Target.WaitForReady>
-                                </ui:Target>
-                              </ui:Click.Target>
-                            </ui:Click>
-                            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DelayMS="2000" DisplayName="Type Into 'INPUT  addressInput'" sap:VirtualizedContainerService.HintSize="333.6,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="[row.Item(&quot;To&quot;).ToString]">
-                              <ui:TypeInto.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b73aeed9-1d2b-440d-b68f-e4cd3c52dd97" InformativeScreenshot="80118180fcd904fdd34bc80109a9bbff" Selector="&lt;webctrl tag='OLA-APP' /&gt;&lt;webctrl shadowhostid='' tag='OLA-MODAL' /&gt;&lt;webctrl shadowhostid='ola-location' tag='OLA-LOCATION' /&gt;&lt;webctrl shadowhostid='' tag='INPUT' /&gt;">
-                                  <ui:Target.TimeoutMS>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:Target.TimeoutMS>
-                                  <ui:Target.WaitForReady>
-                                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                                  </ui:Target.WaitForReady>
-                                </ui:Target>
-                              </ui:TypeInto.Target>
-                            </ui:TypeInto>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayAfter="2" DisplayName="Type Into 'Search for'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="333.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="9ca5242e-6f9a-4a12-827d-74c57aa91765" Text="[row(&quot;To&quot;).ToString]" Version="V1">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable BrowserURL="https://book.olacabs.com/?pickup_name=6P25%2B3Q%20Bengaluru%2C%20Karnataka%20India&amp;lat=13.2001875&amp;lng=77.70943749999999" DesignTimeRectangle="102, 333, 552, 50" ElementType="Text" FriendlyName="'Search for'" FullSelectorArgument="&lt;webctrl tag='OLA-APP' /&gt;&lt;webctrl shadowhostid='' tag='OLA-HOME' /&gt;&lt;webctrl shadowhostid='' tag='OLA-HOME-LOCAL' /&gt;&lt;webctrl shadowhostid='' tag='OLA-LOCATION-INPUT' /&gt;&lt;webctrl idx='3' isleaf='1' shadowhostid='' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='OLA-APP' /&gt;&lt;webctrl shadowhostid='' tag='OLA-HOME' /&gt;&lt;webctrl shadowhostid='' tag='OLA-HOME-LOCAL' /&gt;&lt;webctrl shadowhostid='' tag='OLA-LOCATION-INPUT' /&gt;&lt;webctrl type='' isleaf='1' shadowhostid='' tag='DIV' class='right h-full text placeholder' aaname='Search for a locality or landmark' check:innerText='Search for a locality or landmark' /&gt;" Guid="ebb43a60-b0ec-4c17-a28e-820429c8067d" ImageBase64="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" InformativeScreenshot="062c7df9a3c13b530597201dfae1c4cd.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Book Cabs Nearby at Best Price | Hire Taxi Nearby Online at Olacabs.com' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+                              </uix:NTypeInto.Target>
+                            </uix:NTypeInto>
                             <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="1000" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
                               <ui:Click.CursorPosition>
                                 <ui:CursorPosition Position="Center">
@@ -248,7 +222,7 @@
                                 </ui:Target>
                               </ui:Click.Target>
                             </ui:Click>
-                            <uix:NGetText DisplayName="Get Text 'Comfy hatchbacks'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="9ca5242e-6f9a-4a12-827d-74c57aa91765" Version="V1">
+                            <uix:NGetText DelayBefore="1.5" DisplayName="Get Text 'Comfy hatchbacks'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="9ca5242e-6f9a-4a12-827d-74c57aa91765" Version="V1">
                               <uix:NGetText.Target>
                                 <uix:TargetAnchorable BrowserURL="https://book.olacabs.com/?pickup_name=VHVX%2BWC%20Bengaluru%2C%20Karnataka%20India&amp;lat=12.8948125&amp;lng=77.5985625&amp;drop_lat=13.2001875&amp;drop_lng=77.70943749999999&amp;drop_name=6P25%2B3Q%20Bengaluru%2C%20Karnataka%20India" DesignTimeRectangle="568, 617, 54, 25" ElementType="Text" FriendlyName="'₹1143'" FullSelectorArgument="&lt;webctrl tag='OLA-APP' /&gt;&lt;webctrl shadowhostid='' tag='OLA-HOME' /&gt;&lt;webctrl shadowhostid='' tag='OLA-HOME-LOCAL' /&gt;&lt;webctrl shadowhostid='' tag='OLA-CABS' /&gt;&lt;webctrl aaname='₹1143' shadowhostid='' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='OLA-APP' /&gt;&lt;webctrl shadowhostid='' tag='OLA-HOME' /&gt;&lt;webctrl shadowhostid='' tag='OLA-HOME-LOCAL' /&gt;&lt;webctrl shadowhostid='' tag='OLA-CABS' /&gt;&lt;webctrl shadowhostid='' tag='SPAN' type='' class='' /&gt;" Guid="f8c51590-555d-4309-91e4-857c63e84b30" InformativeScreenshot="1774e62acc39ab78647485f0d5ea85f7.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Book Cabs Nearby at Best Price | Hire Taxi Nearby Online at Olacabs.com' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
                                   <uix:TargetAnchorable.Anchors>
@@ -290,6 +264,7 @@
                                 <OutArgument x:TypeArguments="x:String">[SUV]</OutArgument>
                               </uix:NGetText.Text>
                             </uix:NGetText>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Ola : &quot; + Mini +&quot;-&quot;+ PrimeSedan + &quot;-&quot; + SUV]" />
                             <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="333.6,82.4" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="https://book.olacabs.com/" Version="V1" />
                             <Assign sap:VirtualizedContainerService.HintSize="333.6,61.6" sap2010:WorkflowViewState.IdRef="Assign_4">
                               <Assign.To>
@@ -334,6 +309,7 @@
                         </InArgument>
                       </ui:ExcelWriteRange.StartingCell>
                     </ui:ExcelWriteRange>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Ola data written to excel&quot;]" />
                   </Sequence>
                 </ActivityAction>
               </uix:NApplicationCard.Body>
